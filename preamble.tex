@@ -1,0 +1,20 @@
+\usepackage{pythontex}
+\usepackage{polyglossia}
+\usepackage{hyperref}
+\usepackage[listings,skins,xparse]{tcolorbox}
+\usepackage{float}
+\usepackage{graphicx}
+\input{macros/mypygment}
+\setdefaultlanguage[calendar=islamic,numerals=maghrib]{arabic}
+\setotherlanguage{english}
+\newfontfamily\arabicfont[Script=Arabic,Scale=1.3]{Amiri}
+\newfontfamily\arabicfonttt{Tahoma}
+
+
+% creating new input file for customized colored box
+\newtcbinputlisting[auto counter,number within=section]{pythoncode}[1]{enhanced,title=\flushright{\thetcbcounter \textarabic{مثال رقم }} ,fonttitle={\bfseries\large},listing file={#1},listing options={language=python,numbers=left,numbersep=2.5mm,keywordstyle=\color{blue!90!black}\bfseries,commentstyle={\color{green!45!black}\itshape},stringstyle=\color{red!75!black},
+showstringspaces=false,basicstyle=\normalsize},listing only,colframe=green!30!blue!60!black,colback=white,before skip=20pt,after skip=20pt,
+overlay={\begin{tcbclipinterior}\fill[green!30!blue!15!white] (frame.south west) rectangle ([xshift=4mm]frame.north west);\end{tcbclipinterior}}}
+
+\newtcolorbox{mybox}{after skip=20pt,  before skip=20pt, colback=white}
+
